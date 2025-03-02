@@ -1,0 +1,90 @@
+body {
+    background-image: url("/images/prev.png") ;
+    background-repeat: no-repeat;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    font-family: "Montserrat", serif;
+    
+}
+
+.login-ctn{
+    color: white;
+    position: relative;
+    background-color: black;
+    padding: 15px;
+    height: 550px;
+    width: 500px;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Montserrat", serif;
+    font-weight: 100;
+    margin-top: 70px;
+    
+}
+
+#username, #password {
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    border: none;
+    outline: none;
+   
+
+}
+
+.login-ctn label {
+    margin-right: 150px;
+    
+}
+
+h1 {
+    font-weight: 300;
+}
+
+#username:hover {
+    border: none;
+}
+
+#login-btn {
+    height: 40px;
+    width: 312px;
+    background-color: rgb(229, 71, 71); 
+    border: none;
+    outline: none;
+    font-family: "Montserrat", serif;
+    color: white;
+
+}
+#login-btn:hover{
+    background-color: rgb(231, 98, 98);
+}
+
+.social-media {
+    display: flex;
+    width: 500px;
+    height: 30px;
+    justify-content: center;
+}
+
+.facebook img{
+    height: 40px;
+    width: 40px;
+}
+
+.gmail img {
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.twitter img{
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+}

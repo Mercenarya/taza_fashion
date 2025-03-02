@@ -1,0 +1,343 @@
+.topbar {
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    position: absolute;
+    margin-left: -8px;
+    margin-top: -8px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "Cormorant Garamond", serif;
+    
+}
+
+.topbar a {
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 14px 16px;
+}
+
+.topbar a:hover{
+    /* background-color: white; */
+    color: grey;
+    display: inline;
+}
+
+body {
+    /* background-image: url("https://cdn.pixabay.com/photo/2020/12/01/18/06/porsche-911-gt2-5795128_1280.jpg"); */
+    /* background-repeat: no-repeat; */
+    background-image: linear-gradient(to right,rgb(21, 20, 20), rgb(23, 23, 23));
+    /* background-color: rgb(45, 45, 45); */
+    overflow-y: scroll;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* font-family: "Cormorant Garamond", serif; */
+    font-optical-sizing: auto;
+    font-style: normal;
+    /* background-color: rgb(252, 250, 250); */
+    margin-left: 10px;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+footer {
+    margin-top: 30px;
+    background:black;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    height: 420px;
+    width: 1550px;
+    margin-left: -20px;
+    margin-right: -50px;
+}
+
+.newsletter {
+    
+    margin: 0;
+    background: #000;
+    color: white;
+    padding: 20px 0;
+    width: 1550px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+.subscribe-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.subscribe-box input {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscribe-box button {
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.footer-section {
+    width: 20%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.payment-icons img {
+    height: 25px;
+    margin-left: 10px;
+}
+
+/* Footer */
+
+
+
+
+
+
+
+
+
+.searchbar {
+    /* display: inline; */
+    
+    margin-left: 200px;
+    background-color: rgb(42, 41, 41);
+    width: 450px;
+    margin-bottom: 10px;
+    height: 40px;
+    
+}
+
+#search-btn {
+    background-color: rgb(42, 41, 41);
+    color: white;
+    height: 35px;
+    width: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#search-btn:hover{
+    color: red;
+}
+
+
+#search-field {
+    background-color: rgb(42, 41, 41);
+    color: white;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+    outline: none;
+    padding-left: 5px; 
+    font-family: "Raleway", serif;
+    border-color: grey;
+}
+
+.preview-banner {
+    text-align: center;
+    height: 700px;
+    /* width: 100%; */
+    transition: 0.1s;
+    padding: 0;
+    background-color: black;
+    z-index: 2;
+
+}
+
+/* #porsche-image{
+    position: relative;
+    opacity: 0.7;
+} */
+
+
+
+
+
+#explore-btn{
+    width: 200px;
+    height: 50px;
+    /* background: none; */
+    border-color: black;
+    border: none;
+    
+    outline: none;
+    font-family: "Raleway", serif;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    
+}
+
+#explore-btn:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+h1{
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    margin-left: 100px;
+    color: white;
+    margin-bottom: 55px;
+    margin-top: 50px;
+}
+
+#option-selection {
+    /* margin-left: 500px; */
+   
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Promtion banner  */
+
+/* Option Selection */
+
+.option-content {
+    position: absolute;
+    background-color: grey;
+    width: 150px;
+    height: 200px;
+    display: none;
+    top: 100%; 
+    right: 0
+}
+
+.option-content a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: grey;
+}
+
+.option-content a:hover {
+    background-color: white;
+    color: grey;
+    display: block;
+}
+
+.option {
+    position: relative;
+    display: flex;
+    left: 400px;
+}
+
+.option:hover .option-content{
+    color: white;
+    color: black;
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+
+
+
+
+
+/* Avatar container */
+
+.avt {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.avt img{
+    width: 30px;
+    height: 30px;
+    left: 400px;
+    border-radius: 40px;
+}
+
+
+/* marquee*/
+
+/* cart */
+.cart {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    color: white;
+    font-size: 25px;
+    left: 400px;
+    padding-top: 10px;
+    /* background-color: grey; */
+}

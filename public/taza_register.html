@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/register.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Log in</title>
+</head>
+<body>
+    <!-- id="login-form" -->
+    
+    
+        <div class="register-ctn"  >
+        
+            <h1>Register</h1>
+            
+            <form id = "register-form" method="POST" action="/regis">
+                <input name="username" type="text" id="username" placeholder="Username"><br><br>
+                <input type="password" name="password" id="password" placeholder="Password"><br><br>
+                <input type="email" id="email" name="email" placeholder="Email"><br><br>
+                <input type="tel" id="phone" placeholder="phone" name="phone"><br><br>
+                <span style="font-size: 14px;">Register confirmation will be emailed to you</span><br><br>
+                <input type="submit" id="register-btn" value="register"></input>
+            </form>
+            <a href="#" onclick="redirect_to_login()" style="font-size: 12px; color: white; text-decoration: none; ">
+                Already have account
+            </a>
+        </div>
+   
+    <script lang="text/javascript" src="register.js"></script>
+</body>
+</html>
