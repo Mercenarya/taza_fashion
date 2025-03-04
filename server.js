@@ -2,6 +2,9 @@
 const express = require('express');
 const bordyparser = require('body-parser');
 const mysql = require('mysql2');
+const session = require('express-session');
+const cors = require('cors');
+
 
 //Kết nối Database
 var conn = mysql.createConnection(
@@ -35,17 +38,28 @@ conn.connect(function(err) {
 
 // điều chỉnh chia route
 const app = express();
-// tạo đường dẫn static ở thư mục public 
+// tạo đường dẫn static ở thư mục public và src
 app.use(express.static('public'));
 app.use(express.static('src'));
-
+app.use(cors())
 app.use(bordyparser.json());
+// tạo kế thừa và lấy các thuộc tính cần cho xử lí logic bằng json
 app.use(bordyparser.urlencoded({extended: true}));
-// test đường dẫn 
+
 app.get('/', (req, res) =>{
     res.redirect('/taza_login.html');
     // res.redirect('/public/taza_login.html');
 });
+
+// tạo phiên người dùng 
+app.use(session(
+    {
+        secret: 'thebois',
+        resave: true,
+        saveUninitialized: true
+    }
+))
+
 
 // route đăng nhập mục login
 // auth dùng để POST API từ người dùng nhập vào thông tin đăng nhập, phản hồi kết quả ở login.js
@@ -72,13 +86,15 @@ app.post('/auth', (req, res) =>
                 }
                 // nếu thông tin người dùng chứa số lượng kí tự > 0 và tồn tại 
                 if (result.length > 0){
+                    req.session.loggedin = true;
+                    req.session.username = username;
                     res.send("log in successfully");
                 }
                 // nếu người dùng không tồn tại hoặc thông tin username,password bị nhập sai
                 else{
                     res.send("wrong password or username");
                 }
-                
+                res.end();
             }
         )
     }
@@ -91,7 +107,7 @@ app.post('/regis', (req, res) =>{
     const password = req.body.password;
     const email = req.body.email;
     const phone = req.body.phone;
-
+    // kiểm tra API từ mục bod
     console.log(req.body)
     conn.query('INSERT INTO user (username,password,email,phone) VALUES (?, ?, ?, ?)',[username, password, email, phone],
         (err, result) => {
@@ -125,19 +141,41 @@ app.get('/register', (req, res) =>
 // route chia mục home
 app.get('/home', (req, res) => 
     {
-        res.redirect("/taza_home.html");
+        if (req.session.loggedin){
+            res.redirect("/taza_home.html");
+        }
+        else{
+            res.send('Please login first');
+            res.redirect('/taza_login.html');
+            
+        }
+        
     }
 )
 
 
 // route chia mục products
-app.get('/products', (req, res) =>
+app.get('/product', (req, res) =>
     {
         res.redirect('/taza_products.html');
     }
-
 );
 
+app.get('/products', (req, res) =>
+    {
+        conn.query('SELECT * FROM product',(err, result) =>
+            {
+                if (err){
+                    throw err;
+                }
+                else{
+                    res.status(200).json(result);
+                }
+                console.log(result);
+            }
+        )
+    }
+)
 
 
 

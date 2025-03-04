@@ -230,27 +230,27 @@ def _create_promotion():
 
 def _new_user():
     sql = '''
-        INSERT INTO user (
-            user_id,username,password,email,phone,address,create_modified
-        ) VALUES (%s,%s,%s,%s,%s,%s,%s)
+        INSERT INTO product (product_id,name,description,price,stock,category_id,image_url,created_at) 
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
     '''
+
     try:
-        cursor.execute(sql,[101,'admin','admin123','mtranquoc77@gmail.com','0766709535','Da Nang City',modifield_time.date()])
+        cursor.execute(sql,[1,'Versace Couture Dames Vest Zwart ', 'high fashion versace vest for lady',1700000,17,1,'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQhLikNuqLdmP3jVMaSaDf3FC3G7WCZkS2jyj5gWGxcPUXENIgmYK6AK1BwXZGhf4Cc3RRwh3Y2hlmdoZqEL5vOJnZQUhNF_0uHaXpCK2c&usqp=CAE',modifield_time])
         databases.commit()
         return 'new user accepted'
     except mysql.connector.errors.Error as err: return err
-    finally:
-        sql = '''
-            SELECT * FROM user
-        '''
-        cursor.execute(sql)
-        data = cursor.fetchall()
-        for obj in data:
-            print(obj)
+    # finally:
+    #     sql = '''
+    #         SELECT * FROM user
+    #     '''
+    #     cursor.execute(sql)
+    #     data = cursor.fetchall()
+    #     for obj in data:
+    #         print(obj)
 
 # Handling workflows
 if __name__ == "__main__":
-    print(check_server_connection())
+    # print(check_server_connection())
     # print(_save_db_form(databases._host, databases._user, databases._password))
     # print(_encrypt_form(databases._host, databases._user, databases._password))
     # print(_check_key_script())
