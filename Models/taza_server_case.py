@@ -235,7 +235,7 @@ def _new_user():
     '''
 
     try:
-        cursor.execute(sql,[1,'Versace Couture Dames Vest Zwart ', 'high fashion versace vest for lady',1700000,17,1,'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQhLikNuqLdmP3jVMaSaDf3FC3G7WCZkS2jyj5gWGxcPUXENIgmYK6AK1BwXZGhf4Cc3RRwh3Y2hlmdoZqEL5vOJnZQUhNF_0uHaXpCK2c&usqp=CAE',modifield_time])
+        cursor.execute(sql,[3,'Single Breasted Wool Blazer', 'Elegant formal Vest Style',20456000,17,1,'https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw4c6c59de/original/90_1019620-1A14399_1VF00_10_Single~BreastedWoolBlazer-Blazers~~Suits-Versace-online-store_1_2.jpg?sw=550&q=85&strip=true',modifield_time])
         databases.commit()
         return 'new user accepted'
     except mysql.connector.errors.Error as err: return err

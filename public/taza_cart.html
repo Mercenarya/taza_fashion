@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/products.css">
-
+    <link rel="stylesheet" href="/static/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gothic+A1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Mo
@@ -32,9 +31,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Taza</title>
 </head>
-
 <body>
     <div class="topbar">
         <a href="/home">Home</a>
@@ -46,68 +44,73 @@
             <button id="search-btn"><i class="fa fa-search"></i></button>
         </div>
         
-        <div class="cart">
+        <div class="option">
             <div class="cart-icon" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="cart-count">1</span>
             </div>
-        </div>
-        <div class="option">
             <div class="avt">
                 <img src="images/avt.png" alt="">
             </div>
-            <button id="option-selection">
-                <i class="fa fa-gear"></i>
-            </button>
-            <div class="option-content">
-                <a href="Profile">Profile</a>
-                <a href="Settings">Settings</a>
-                <a id="logout-btn" name="log-out" href="#" onclick="logout()">Logout</a>
+            <div class="setting">
+                <button id="option-selection">
+                    <i class="fa fa-gear"></i>
+                </button>
+                <div class="option-content">
+                    <a href="Profile">Profile</a>
+                    <a href="Settings">Settings</a>
+                    <a href="Logout">Logout</a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Store and Products -->
-    <div class="banner">
-        <h1>STYLE THAT DEFINES YOU – WEAR IT YOUR WAY!</h1>
-        <p>Discover the latest fashion collection at Taza! Modern designs, premium materials, and a variety of styles—from casual to elegant. Find the perfect pieces that match your personality and express your unique style today!</p>
-    </div>
-    <div class="shop">
-        <div class="category">
-            <h3>Category</h3>
-            <ul  style="padding-top: 10px; list-style: none; font-size: 17px ; margin-left: -45px;">
-                <li><a href="#">Top Sellers</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Vest</a></li>
-                <li><a href="#">Shirt</a></li>
-                <li><a href="#">Coat</a></li>
-                <li><a href="#">Perfume</a></li>
-            </ul>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()">
+        <div class="cart-container" onclick="event.stopPropagation();">
+            <div class="cart-header">
+                <span class="close-cart" onclick="toggleCart()">&times;</span>
+                <h2>Your Cart</h2>
+                <span class="item-count">(1) ITEMS</span>
+            </div>
+            <p class="thank-you">THANK FOR SHOPPING!</p>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="images/jeans.jpg" alt="Faded Skinny Jeans">
+                    <div class="item-details">
+                        <p>Faded Skinny Jeans</p>
+                        <span class="remove-item" onclick="removeItem()">&times;</span>
+                        <input type="number" value="1" min="1">
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p>Item Subtotal <span>$35</span></p>
+                <p class="total">TOTAL <span>$35</span></p>
+                <button class="purchase">Purchase</button>
+            </div>
         </div>
-        <div class="products" id="products" name="products">
-        
-        </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-    <!-- Store and Products -->
-
+    <div class="endpage">
+        <div class="standard-slogan">
+            Standard - Suitable - Flexibility
+        </div>
+    
+        <div class="car-brand">
+            
+            <div class="brand">
+                <a>Learn more</a>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="newsletter">
             <h2>STAY UP TO DATE ABOUT<br>OUR LATEST OFFERS</h2>
-            <form id="send-email-form" method="POST" action='/send-email'>
-                <div class="subscribe-box">
-                    <input name="email" id="email-field" type="email" placeholder="Enter your email address">
-                    <button type="submit">Subscribe to Newsletter</button>
-                </div>
-            </form>
+            <div class="subscribe-box">
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe to Newsletter</button>
+            </div>
         </div>
 
         <div class="footer-content">
@@ -174,6 +177,20 @@
             </div>
         </div>
     </footer>
-    <script lang="text/javascript" src="product.js"></script>
+    <script>
+        function toggleCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const cart = document.querySelector('.cart-container');
+            if (cart.style.right === "0px") {
+                cart.style.right = "-400px";
+                setTimeout(() => overlay.style.display = 'none', 300);
+            } else {
+                overlay.style.display = 'block';
+                setTimeout(() => cart.style.right = "0px", 10);
+            }
+        }     
+    </script>
+
 </body>
+
 </html>

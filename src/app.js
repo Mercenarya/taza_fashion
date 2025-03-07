@@ -310,4 +310,74 @@ function display_assigned_product(obj,arr){
   }
 
 
+// chức năng của giỏ hàng
+function toggleCart() {
+    const overlay = document.getElementById('cart-overlay');
+    const cart = document.querySelector('.cart-container');
+    if (cart.style.right === "0px") {
+        cart.style.right = "-400px";
+        setTimeout(() => overlay.style.display = 'none', 300);
+    } else {
+        overlay.style.display = 'block';
+        setTimeout(() => cart.style.right = "0px", 10);
+    }
+} 
 
+// chức năng gửi email nhận offer hoặc coupon
+function sendemail(){
+  const email_form = document.getElementById("send-email-form");
+  const email_field = document.getElementById("email-field");
+  email_form.addEventListener(
+    'submit', function(event){
+      event.preventDefault();
+      fetch(
+        '/send-email', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+
+          body: JSON.stringify(
+            {
+              email: email_field.value
+            }
+          )
+        }
+      )
+      .then(response => response.text())
+      .then(data => {
+          if (data.includes('email sent, We will give you an answer later')){
+            alert(data);
+          }
+          else {
+            alert(data);
+          }
+        }
+      )
+    }
+  )
+
+}
+
+window.onload = function(){
+  sendemail();
+}
+
+// chức năng đăng xuất
+function logout(){
+    fetch("/logout",
+      {
+        // gửi yêu cầu đăng xuất
+        method: "POST",
+        headers:{
+          'content-type':'application/json'
+        }
+      }
+    )
+    .then(response => response.text())
+    .then(data =>
+      {
+        window.location.href = '/';
+      }
+    )
+}

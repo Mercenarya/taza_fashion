@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/aboutus.css">
+    <!-- <link rel="stylesheet" href="/static/common.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taza</title>
+</head>
+<body>
+    <div class="topbar">
+        <a href="/home">Home</a>
+        <a href="/product">Product</a>
+        <a href="/about">Taza</a>
+        <a href="/services">Service</a>
+        <div class="searchbar">
+            <input id="search-field" placeholder="outfit/models...">
+            <div class="search-dropdown" id="search-dropdown">
+                <ul>
+                    <li>Balenciaga T-shirt</li>
+                    <li>Balenciaga jeans</li>
+                    <li>Balenciaga jacket</li>
+                    <li>Balenciaga shirt</li>
+                    <li>Balenciaga short</li>
+                </ul>
+            </div>
+            <button id="search-btn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="option">
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">1</span>
+            </div>
+            <div class="avt">
+                <img src="images/avt.png" alt="">
+            </div>
+            <div class="setting">
+                <button id="option-selection">
+                    <i class="fa fa-gear"></i>
+                </button>
+                <div class="option-content">
+                    <a href="Profile">Profile</a>
+                    <a href="Settings">Settings</a>
+                    <a href="Logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()">
+        <div class="cart-container" onclick="event.stopPropagation();">
+            <div class="cart-header">
+                <span class="close-cart" onclick="toggleCart()">&times;</span>
+                <h2>Your Cart</h2>
+                <span class="item-count">(1) ITEMS</span>
+            </div>
+            <p class="thank-you">THANK FOR SHOPPING!</p>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="images/jeans.jpg" alt="Faded Skinny Jeans">
+                    <div class="item-details">
+                        <p>Faded Skinny Jeans</p>
+                        <span class="remove-item" onclick="removeItem()">&times;</span>
+                        <input type="number" value="1" min="1">
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p>Item Subtotal <span>$35</span></p>
+                <p class="total">TOTAL <span>$35</span></p>
+                <button class="purchase">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Taza – Where style meets quality!</h1>
+            <div class="logo">
+                <img src="/static/LGO/BANNER.png" alt="Taza Logo">
+            </div>
+            <p>Not just a fashion brand, but a statement of your individuality. We bring you modern, sophisticated designs that suit every style, from dynamic and youthful to elegant and luxurious. With premium materials and meticulous craftsmanship in every stitch, Taza is committed to delivering a perfect shopping experience, empowering you to express your unique personality with confidence.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">International Brands</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2,000+</span>
+                    <span class="stat-label">High-Quality Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30,000+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+            </div>
+            <button class="cta-button">Buy now</button>
+        </div>
+    </section>
+    
+    <section class="founders">
+        <div class="founder-hongminh">
+            <img src="/static/LGO/hongminh.jpg" alt="Nguyễn Hồng Minh">
+            <div class="founder-info">
+                <p class="founder-text">Taza (2025) was founded with the desire to bring outfits that are not only beautiful but also express each individual's own style. From a small shop, Taza has grown into a beloved fashion brand.</p>
+                <p class="founder-name" id="hongminh">CEO Founder - Nguyễn Hồng Minh</p>
+            </div>
+        </div>
+        <p class = "more">Inspired by modern style combined with sophistication in every line, Taza always aims for minimalist yet outstanding designs.</p>
+        <div class="founder-quocminh">
+            <div class="founder-info">
+                <p class="founder-text-thumbnail">Fabric & Origin</p>
+                <br>
+                <p class="founder-text">Taza uses organic cotton, linen, silk and other premium materials, ensuring comfort and safety for the skin.Inspired by modern style combined with sophistication in every line, Taza always aims for minimalist yet outstanding designs.</p>
+                <p class="founder-name" id="quocminh">CO Founder - Trần Quốc Minh</p>
+            </div>
+            <img src="/static/LGO/quocminh.jpg" alt="Trần Quốc Minh">
+        </div>
+    </section>
+    <section class="commitment">
+        <h2>Commitment & Mission</h2>
+        <div class="commitment-items">
+            <div>Quality Commitment</div>
+            <div>Customer Service</div>
+            <div>Sustainable Development</div>
+        </div>
+    </section>
+    
+    <section class="fashion-criteria">
+        <h2>Taza's fashion criteria</h2>
+        <div class="criteria-content">
+            <div class="criteria-item1">
+                <h3>Standard</h3>
+                <p>The product meets quality standards in terms of material, seams, shape and durability.</p>
+            </div>
+            <div class="criteria-item2">
+                <h3>Suitable</h3>
+                <p>Suitable for fashion trends, personal style, usage circumstances and wearer's body shape.</p>
+            </div>
+            <div class="criteria-item3">
+                <h3>Flexibility</h3>
+                <p>Easy to coordinate, flexible application in many situations, can be transformed into many different styles.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="newsletter">
+            <h2>STAY UP TO DATE ABOUT<br>OUR LATEST OFFERS</h2>
+            <div class="subscribe-box">
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe to Newsletter</button>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-section company">
+                <h3>SHOP.CO</h3>
+                <p>We have clothes that suit your style and which you're proud to wear. From women<br>to men.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Delivery Details</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>FAQ</h3>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Manage Deliveries</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Payments</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>RESOURCES</h3>
+                <ul>
+                    <li><a href="#">Free eBooks</a></li>
+                    <li><a href="#">Development Tutorial</a></li>
+                    <li><a href="#">How to - Blog</a></li>
+                    <li><a href="#">Youtube Playlist</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Shop.co © 2000-2023, All Rights Reserved</p>
+            <div class="payment-icons">
+                <img src="images/visa.png" alt="Visa">
+                <img src="images/mastercard.png" alt="MasterCard">
+                <img src="images/paypal.png" alt="PayPal">
+                <img src="images/applepay.png" alt="Apple Pay">
+                <img src="images/googlepay.png" alt="Google Pay">
+            </div>
+        </div>
+    </footer>
+    <script lang="text/javascript" src="about.js">
+        function toggleCart() {
+            const overlay = document.getElementById('cart-overlay');
+            const cart = document.querySelector('.cart-container');
+            if (cart.style.right === "0px") {
+                cart.style.right = "-400px";
+                setTimeout(() => overlay.style.display = 'none', 300);
+            } else {
+                overlay.style.display = 'block';
+                setTimeout(() => cart.style.right = "0px", 10);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchField = document.getElementById("search-field");
+            const dropdown = document.getElementById("search-dropdown");
+            
+            searchField.addEventListener("focus", function() {
+                dropdown.style.display = "block";
+                dropdown.style.opacity = "1";
+            });
+            
+            searchField.addEventListener("blur", function() {
+                setTimeout(() => {
+                    dropdown.style.display = "none";
+                    dropdown.style.opacity = "0";
+                }, 200);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

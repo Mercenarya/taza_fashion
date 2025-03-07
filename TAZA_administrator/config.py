@@ -1,0 +1,1 @@
+MYSQL_CONN = "mysql+mysqlconnector://root:Minh_17102004.localhost/taza"

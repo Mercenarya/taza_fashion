@@ -1,7 +1,11 @@
+// hiển thị sản phẩm - GET
+var outfit_obj = {
+  name:"",
+  price:0,
+  description:""
+}
+
 async function products(){
-
-
-    var head = document.createElement('head');
     var style = document.createElement('style');
     style.innerHTML = `
         .item {
@@ -10,8 +14,20 @@ async function products(){
             padding: 10px;
             margin: 10px;
             display: inline-block;
-            width: 200px;
+            width: 300px;
+            height: 500px;
             text-align: center;
+        }
+        
+        .item img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .item a {
+            color: white;
+            font-size: 20px;
+            font-family: 'QuickSand', senrif;
         }
 
     `
@@ -24,12 +40,27 @@ async function products(){
         product_list.innerHTML = product.map(item => 
             `
             <div class="item">
-                <h3>${item.name}</h3>
-                <p>Giá: $${item.price}</p>
+                <img class="product-image" data-name="${item.name}" src="${item.image_url}">
+                <h3 class="product-name" data-name="${item.name}">${item.name}</h3>
+                <p class="product-price">Price: $${item.price}</p>
+                <p class="product-description">${item.description}</p>
+                <a class="see-all" data-name="${item.name}" href="#">See all</a>
             </div>
             `
         ).join('');
         console.log(product);
+
+        document.querySelectorAll(".see-all").forEach(element => {
+          element.addEventListener('click', function(event){
+            event.preventDefault();
+            const name = this.getAttribute('data-name');
+            redirect_items(name);
+            console.log(name);
+          })
+        });
+
+        
+
     }
     catch(err){
         console.log(err);
@@ -39,4 +70,80 @@ async function products(){
 
 products();
 
-// document.addEventListener('DOMContentLoaded', products);
+
+function toggleCart() {
+    const overlay = document.getElementById('cart-overlay');
+    const cart = document.querySelector('.cart-container');
+    if (cart.style.right === "0px") {
+        cart.style.right = "-400px";
+        setTimeout(() => overlay.style.display = 'none', 300);
+    } else {
+        overlay.style.display = 'block';
+        setTimeout(() => cart.style.right = "0px", 10);
+    }
+} 
+
+
+// Gửi email - request 
+function sendemail(){
+    const email_form = document.getElementById("send-email-form");
+    const email_field = document.getElementById("email-field");
+    email_form.addEventListener(
+      'submit', function(event){
+        event.preventDefault();
+        fetch(
+          '/send-email', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+  
+            body: JSON.stringify(
+              {
+                email: email_field.value
+              }
+            )
+          }
+        )
+        .then(response => response.text())
+        .then(data => {
+            if (data.includes('email sent, We will give you an answer later')){
+              alert(data);
+            }
+            else {
+              alert(data);
+            }
+          }
+        )
+      }
+    )
+  }
+  
+  window.onload = function(){
+    sendemail();
+  }
+
+  // chức năng đăng xuất
+function logout(){
+    fetch("/logout",
+      {
+        // gửi yêu cầu đăng xuất
+        method: "POST",
+        headers:{
+          'content-type':'application/json'
+        }
+      }
+    )
+    .then(response => response.text())
+    .then(data =>
+      {
+        window.location.href = '/'; 
+      }
+    )
+}
+
+// chuyển hướng tới items nếu như người dùng chọn vào 1 sản phẩm nào đó
+
+function redirect_items(obj){
+  window.location.href = `/outfit/${encodeURIComponent(obj)}`;
+}

@@ -1,0 +1,730 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+.topbar {
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    position: absolute;
+    margin-left: -8px;
+    margin-top: -8px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "Cormorant Garamond", serif;
+    
+}
+
+.topbar a {
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 14px 16px;
+}
+
+.topbar a:hover{
+    /* background-color: white; */
+    color: grey;
+    display: inline;
+}
+
+/* Base Styles */
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    overflow-y: scroll;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* font-family: "Cormorant Garamond", serif; */
+    font-optical-sizing: auto;
+    font-style: normal;
+    /* background-color: rgb(252, 250, 250); */
+    margin-left: 10px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Search bar styles */
+
+.searchbar {
+    /* display: inline; */
+    
+    margin-left: 200px;
+    background-color: rgb(42, 41, 41);
+    width: 470px;
+    margin-bottom: 10px;
+    height: 40px;
+    
+}
+
+#search-btn {
+    background-color: rgb(42, 41, 41);
+    color: white;
+    height: 30px;
+    width: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#search-btn:hover{
+    color: red;
+}
+
+
+#search-field {
+    background-color: rgb(42, 41, 41);
+    color: white;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+    outline: none;
+    padding-left: 5px; 
+    font-family: "Raleway", serif;
+    border-color: grey;
+}
+
+
+
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 415px;
+    transform: translateX(-50%);
+    width: 400px; /* Cùng width với .search-box */
+    background: rgb(42, 41, 41);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+.search-dropdown.active {
+    display: block;
+}
+.search-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.search-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+.search-dropdown li:hover {
+    color: black;
+    background: #f0f0f0;
+}
+
+
+/* Option Selection */
+
+#option-selection {
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.option-content {
+    position: absolute;
+    background-color: grey;
+    width: 150px;
+    height: 200px;
+    display: none;
+    top: 100%; 
+    right: 0
+}
+
+.option-content a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: grey;
+
+}
+
+.option-content a:hover {
+    background-color: white;
+    color: grey;
+    display: block;
+}
+
+.option {
+    position: relative;
+    display: flex;
+    left: 400px;
+}
+
+.setting:hover .option-content{
+    color: white;
+    color: black;
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+
+/* Avatar container */
+
+.avt {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.avt img{
+    width: 30px;
+    height: 30px;
+    left: 400px;
+    border-radius: 40px;
+}
+
+/* cart */
+.cart-container {
+    position: fixed;
+    top: 20px;
+    right: -400px; /* Giấu giỏ hàng bên phải */
+    width: 400px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+    color: black !important;
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    
+}
+.item-count{
+    font-size: medium;
+}
+.cart-items {
+    margin: 20px 0;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+.cart-summary {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.purchase {
+    width: 100%;
+    padding: 10px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.purchase:hover {
+    background: #333;
+}
+.close-cart{
+    font-size: 40px; /* Điều chỉnh kích thước */
+    cursor: pointer;
+}
+
+
+/* Header & Hero Section */
+header {
+    background-color: #111;
+    padding: 15px 0;
+}
+
+.hero {
+    padding: 180px 0 100px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    margin-top: -60px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+.service-container {
+    width: 80%;
+    margin: auto;
+}
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/* .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.hero .logo img {
+    max-width: 200px;
+    margin-bottom: 40px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 50px 0;
+    position: relative;
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    width: 1px;
+    background-color: #888;
+}
+
+.stat-number {
+    font-family: 'Satoshi', sans-serif;
+    display: block;
+    font-size: 48px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-family: 'Joan', sans-serif;
+    font-size: 16px;
+    color: #888;
+}
+
+.stat-number {
+    font-family: 'Satoshi', sans-serif;
+    display: block;
+    font-size: 48px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #888;
+}
+
+.cta-button {
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Founders Section */
+.founders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.founder-hongminh, .founder-quocminh {
+    text-align: left;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.founder-hongminh {
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.founder-quocminh {
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.founder-hongminh img {
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid white;
+}
+.founder-quocminh img {
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.founder-info {
+    flex: 1;
+    padding: 0 50px;
+    color: white;
+}
+
+.founder-hongminh .founder-info {
+    text-align: right;
+    padding-right: 0px;
+}
+
+.founder-quocminh .founder-info {
+    text-align: left;
+    padding-left: 0px;
+}
+
+.founder-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: "Inria Sans", serif;
+}
+.founder-text-thumbnail {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: "Inria Sans", serif;
+}
+
+.founder-name {
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: "Inria Sans", sans-serif;
+}
+#quocminh{
+    margin-top: 40px;
+}
+#hongminh{
+    margin-top: 50px;
+
+}
+.more{
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: "Inria Sans", sans-serif;
+}
+
+/* Commitment Section */
+.commitment-items {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px 0;
+}
+
+.commitment-items div {
+    font-size: 24px;
+    font-family: "Cormorant Garamond", serif;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.commitment-items div:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.commitment h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+
+.fashion-criteria {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.fashion-criteria h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.criteria-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: justify;
+}
+
+.criteria-item1, .criteria-item2, .criteria-item3 {
+    flex: 1;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.criteria-item1:hover, .criteria-item2:hover, .criteria-item3:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.criteria-item1 h3, .criteria-item2 h3, .criteria-item3 h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.criteria-item1 p, .criteria-item2 p, .criteria-item3 p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.criteria-item {
+    flex: 1;
+    padding: 20px;
+}
+
+.criteria-item h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.criteria-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* footer */
+.newsletter {
+    
+    margin: 0;
+    background: #000;
+    color: white;
+    padding: 20px 0;
+    width: 1550px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+.subscribe-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.subscribe-box input {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscribe-box button {
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.footer-section {
+    width: 20%;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.payment-icons img {
+    height: 25px;
+    margin-left: 10px;
+}
+
+
+
+
+/* Footer */
+
+.car-brand {    
+
+    text-align: center;
+    justify-self: center;
+    display: flex;
+    
+}
+
+.brand {
+    background-color: white;
+    width: 500px;
+    height: 40px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.brand:hover {
+    transform: scale(1.2);
+}
+
+.brand img{
+    height: 40px;
+    width: 40px;
+    
+}
+
+.standard-slogan {
+    font-family: "QuickSand",serif;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    
+}
+
+
+
+
+
+/* endpage */
+.endpage {
+    width: 100%;
+    text-align: center;
+}
+
+

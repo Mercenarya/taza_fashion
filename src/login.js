@@ -3,10 +3,11 @@ const form = document.getElementById("login-form");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 
+// bắt sự kiện từ form của giao diện
 form.addEventListener(
     'submit', function(event){
         event.preventDefault();
-
+        
         fetch(
             '/auth', {
                 method: 'POST',

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/products.css">
 
+    <link rel="stylesheet" href="/static/service.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gothic+A1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Mo
@@ -32,73 +32,91 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Taza</title>
 </head>
-
 <body>
     <div class="topbar">
+        
         <a href="/home">Home</a>
         <a href="/product">Product</a>
         <a href="/about">Taza</a>
         <a href="/services">Service</a>
+
         <div class="searchbar">
             <input id="search-field" placeholder="outfit/models...">
             <button id="search-btn"><i class="fa fa-search"></i></button>
         </div>
-        
-        <div class="cart">
+        <div class="option">
             <div class="cart-icon" onclick="toggleCart()">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="cart-count">1</span>
             </div>
-        </div>
-        <div class="option">
             <div class="avt">
                 <img src="images/avt.png" alt="">
             </div>
-            <button id="option-selection">
-                <i class="fa fa-gear"></i>
-            </button>
-            <div class="option-content">
-                <a href="Profile">Profile</a>
-                <a href="Settings">Settings</a>
-                <a id="logout-btn" name="log-out" href="#" onclick="logout()">Logout</a>
+            <div class="setting">
+                <button id="option-selection">
+                    <i class="fa fa-gear"></i>
+                </button>
+                <div class="option-content">
+                    <a href="Profile">Profile</a>
+                    <a href="Settings">Settings</a>
+                    <a id="logout-btn" name="log-out" href="#" onclick="logout()">Logout</a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Store and Products -->
-    <div class="banner">
-        <h1>STYLE THAT DEFINES YOU – WEAR IT YOUR WAY!</h1>
-        <p>Discover the latest fashion collection at Taza! Modern designs, premium materials, and a variety of styles—from casual to elegant. Find the perfect pieces that match your personality and express your unique style today!</p>
-    </div>
-    <div class="shop">
-        <div class="category">
-            <h3>Category</h3>
-            <ul  style="padding-top: 10px; list-style: none; font-size: 17px ; margin-left: -45px;">
-                <li><a href="#">Top Sellers</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Vest</a></li>
-                <li><a href="#">Shirt</a></li>
-                <li><a href="#">Coat</a></li>
-                <li><a href="#">Perfume</a></li>
-            </ul>
+    <div class="service-container">
+        <div class="service">
+            <div class="text">
+                <h2>Design on demand</h2>
+                <p>Receive design of fashion products (shirts, pants, skirts) according to customer requirements.</p>
+            </div>
+            <img src="images/design-on-demand.png" alt="Design on demand">
         </div>
-        <div class="products" id="products" name="products">
-        
+        <div class="border0"></div>
+    
+        <div class="service">
+            <div class="text">
+                <h2>Buy secondhand goods</h2>
+                <p>Buy used but not damaged fashion products that users no longer want to use.</p>
+            </div>
+            <img src="images/Buy-second-good.jpg" alt="Secondhand goods">
+        </div>
+        <div class="border1"></div>
+        <div class="service">
+            <div class="text">
+                <h2>Product Consulting</h2>
+                <p>Product consulting based on customer criteria.</p>
+            </div>
+            <img src="images/product-comsulting.jpg" alt="Product Consulting">
+        </div>
+        <div class="border2"></div>
+    
+        <div class="service">
+            <div class="text">
+                <h2>24/7 Customer Care</h2>
+                <p>Customers who have any problems with the shop's products can contact the website or hotline 1900 1098.</p>
+            </div>
+            <img src="images/customer-service.jpg" alt="Customer Care">
+            
+        </div>
+        <div class="border3"></div>
+    
+    </div>
+    <br>
+    <div class="endpage">
+        <div class="standard-slogan">
+            Standard - Suitable - Flexibility
+        </div>
+    
+        <div class="car-brand">
+            
+            <div class="brand">
+                <a>Learn more</a>
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- Store and Products -->
-
     <footer>
         <div class="newsletter">
             <h2>STAY UP TO DATE ABOUT<br>OUR LATEST OFFERS</h2>
@@ -174,6 +192,10 @@
             </div>
         </div>
     </footer>
-    <script lang="text/javascript" src="product.js"></script>
+    <script lang="text/javascript" src="services.js">
+
+    </script>
+
 </body>
+
 </html>
